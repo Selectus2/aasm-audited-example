@@ -1,0 +1,172 @@
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from migration_template at (erb):6)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from migration_template at (erb):6)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /home/josh/trail-training/api-demo2/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /home/josh/trail-training/api-demo2/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /home/josh/trail-training/api-demo2/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /home/josh/trail-training/api-demo2/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /home/josh/trail-training/api-demo2/bin/rails:5)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20210226063119)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210226063119"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-26 06:33:17.144582"], ["updated_at", "2021-02-26 06:33:17.144582"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "somnath@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "somnath@gmail.com"], ["encrypted_password", "$2a$12$ggBCLrFfXwkWsaJpz35O3eiuzCgKXiXz/g4q1ZGhrPqnwBMEzqJIW"], ["created_at", "2021-02-26 06:34:49.445402"], ["updated_at", "2021-02-26 06:34:49.445402"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTasks (20210226110712)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210226110712"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "2020-02-26"], ["description", "complete the task"], ["status", "draft"], ["created_at", "2021-02-26 11:37:29.432891"], ["updated_at", "2021-02-26 11:37:29.432891"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to InstallAudited (20210226114025)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "audits"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "audits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "auditable_id" integer, "auditable_type" varchar, "associated_id" integer, "associated_type" varchar, "user_id" integer, "user_type" varchar, "username" varchar, "action" varchar, "audited_changes" text, "version" integer DEFAULT 0, "comment" varchar, "remote_address" varchar, "request_uuid" varchar, "created_at" datetime)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "auditable_index" ON "audits" ("auditable_type", "auditable_id", "version")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "associated_index" ON "audits" ("associated_type", "associated_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "user_index" ON "audits" ("user_id", "user_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_audits_on_request_uuid" ON "audits" ("request_uuid")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_audits_on_created_at" ON "audits" ("created_at")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210226114025"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."status" = ? /* loading for inspect */ LIMIT ?[0m  [["status", "draft"], ["LIMIT", 11]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."status" = ? ORDER BY "tasks"."id" ASC LIMIT ?[0m  [["status", "draft"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."status" = ? ORDER BY "tasks"."id" ASC LIMIT ?[0m  [["status", "draft"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."status" = ? /* loading for inspect */ LIMIT ?[0m  [["status", "draft"], ["LIMIT", 11]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."status" = ? ORDER BY "tasks"."id" ASC LIMIT ?[0m  [["status", "draft"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ?[0m  [["auditable_id", 1], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Create (0.3ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 1], ["auditable_type", "Task"], ["action", "update"], ["audited_changes", "---\nstatus:\n- draft\n- deleted\n"], ["version", 1], ["request_uuid", "a657f26c-1620-4ffe-8e9b-5e70def0ad28"], ["created_at", "2021-02-26 11:42:57.682336"]]
+  [1m[36mTask Update (0.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "deleted"], ["updated_at", "2021-02-26 11:42:57.631855"], ["id", 1]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAudited::Audit Load (0.3ms)[0m  [1m[34mSELECT "audits".* FROM "audits" ORDER BY "audits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudited::Audit Load (0.3ms)[0m  [1m[34mSELECT "audits".* FROM "audits" ORDER BY "audits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAudited::Audit Load (0.6ms)[0m  [1m[34mSELECT "audits".* FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ? AND (version <= 1) ORDER BY "audits"."version" ASC[0m  [["auditable_id", 1], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Load (0.3ms)[0m  [1m[34mSELECT "audits".* FROM "audits" ORDER BY "audits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAudited::Audit Load (0.5ms)[0m  [1m[34mSELECT "audits".* FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ? AND (version <= 1) ORDER BY "audits"."version" ASC[0m  [["auditable_id", 1], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Load (0.1ms)[0m  [1m[34mSELECT "audits".* FROM "audits" ORDER BY "audits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAudited::Audit Load (0.6ms)[0m  [1m[34mSELECT "audits".* FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ? AND (version <= 1) ORDER BY "audits"."version" ASC[0m  [["auditable_id", 1], ["auditable_type", "Task"]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAudited::Audit Load (0.1ms)[0m  [1m[34mSELECT "audits".* FROM "audits" ORDER BY "audits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudited::Audit Load (0.1ms)[0m  [1m[34mSELECT "audits".* FROM "audits" ORDER BY "audits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ?[0m  [["auditable_id", 1], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Create (0.3ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 1], ["auditable_type", "Task"], ["action", "update"], ["audited_changes", "---\nstatus:\n- deleted\n- draft\n"], ["version", 2], ["request_uuid", "7db5aa3a-c5db-4b6d-840c-9df625a2cd27"], ["created_at", "2021-02-26 11:47:46.927917"]]
+  [1m[36mTask Update (0.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "draft"], ["updated_at", "2021-02-26 11:47:46.926208"], ["id", 1]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."status" = ? ORDER BY "tasks"."id" ASC LIMIT ?[0m  [["status", "draft"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ?[0m  [["auditable_id", 1], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Create (0.4ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 1], ["auditable_type", "Task"], ["action", "update"], ["audited_changes", "---\nstatus:\n- draft\n- deleted\n"], ["version", 3], ["request_uuid", "d8f7fb46-72f7-404f-8fee-ac2e57f1af50"], ["created_at", "2021-02-26 11:48:27.116194"]]
+  [1m[36mTask Update (0.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "deleted"], ["updated_at", "2021-02-26 11:48:27.114345"], ["id", 1]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAudited::Audit Load (0.8ms)[0m  [1m[34mSELECT "audits".* FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ? /* loading for inspect */ ORDER BY "audits"."version" ASC LIMIT ?[0m  [["auditable_id", 1], ["auditable_type", "Task"], ["LIMIT", 11]]
+  [1m[36mAudited::Audit Load (0.3ms)[0m  [1m[34mSELECT "audits".* FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ? ORDER BY "audits"."version" DESC LIMIT ?[0m  [["auditable_id", 1], ["auditable_type", "Task"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudited::Audit Load (0.7ms)[0m  [1m[34mSELECT "audits".* FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ? ORDER BY "audits"."version" DESC LIMIT ?[0m  [["auditable_id", 1], ["auditable_type", "Task"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ?[0m  [["auditable_id", 1], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Create (0.9ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 1], ["auditable_type", "Task"], ["action", "update"], ["audited_changes", "---\nstatus:\n- deleted\n- draft\n"], ["version", 4], ["request_uuid", "2a58865c-cd4e-4726-a4e5-65dd01555cfa"], ["created_at", "2021-02-26 11:51:42.610852"]]
+  [1m[36mTask Update (0.5ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "draft"], ["updated_at", "2021-02-26 11:51:42.607174"], ["id", 1]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "2"], ["description", "22"], ["status", "draft"], ["created_at", "2021-02-26 12:10:15.471683"], ["updated_at", "2021-02-26 12:10:15.471683"]]
+  [1m[36mAudited::Audit Create (0.3ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 2], ["auditable_type", "Task"], ["action", "create"], ["audited_changes", "---\nname: '2'\ndescription: '22'\nstatus: draft\n"], ["version", 1], ["request_uuid", "d6263e2e-d2fe-4e6f-9d23-22e0ba9a748d"], ["created_at", "2021-02-26 12:10:15.481173"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "3"], ["description", "33"], ["status", "draft"], ["created_at", "2021-02-26 12:11:46.404480"], ["updated_at", "2021-02-26 12:11:46.404480"]]
+  [1m[36mAudited::Audit Create (0.3ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 3], ["auditable_type", "Task"], ["action", "create"], ["audited_changes", "---\nname: '3'\ndescription: '33'\nstatus: draft\n"], ["version", 1], ["request_uuid", "4f3cfb45-0a90-43e8-b1af-7b51d7e39bc3"], ["created_at", "2021-02-26 12:11:46.414262"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ?[0m  [["auditable_id", 3], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Create (1.2ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 3], ["auditable_type", "Task"], ["action", "update"], ["audited_changes", "---\nstatus:\n- draft\n- scheduled\n"], ["version", 2], ["request_uuid", "a5a2186b-fa93-4e1f-a2dd-0519340219ca"], ["created_at", "2021-02-26 12:12:21.392316"]]
+  [1m[36mTask Update (0.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "scheduled"], ["updated_at", "2021-02-26 12:12:21.387167"], ["id", 3]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ?[0m  [["auditable_id", 3], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Create (0.3ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 3], ["auditable_type", "Task"], ["action", "update"], ["audited_changes", "---\nstatus:\n- scheduled\n- started\n"], ["version", 3], ["request_uuid", "76eebfe4-7e73-445e-8374-6c11ad4dfcd1"], ["created_at", "2021-02-26 12:12:28.696740"]]
+  [1m[36mTask Update (0.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "started"], ["updated_at", "2021-02-26 12:12:28.695066"], ["id", 3]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "4"], ["description", "44"], ["status", "draft"], ["created_at", "2021-02-26 12:12:48.994371"], ["updated_at", "2021-02-26 12:12:48.994371"]]
+  [1m[36mAudited::Audit Create (1.0ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 4], ["auditable_type", "Task"], ["action", "create"], ["audited_changes", "---\nname: '4'\ndescription: '44'\nstatus: draft\n"], ["version", 1], ["request_uuid", "b6062b46-278a-40f6-9dd1-8ed979ebc39d"], ["created_at", "2021-02-26 12:12:49.003339"]]
+  [1m[36mTRANSACTION (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ?[0m  [["auditable_id", 4], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Create (0.4ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 4], ["auditable_type", "Task"], ["action", "update"], ["audited_changes", "---\nstatus:\n- draft\n- scheduled\n"], ["version", 2], ["request_uuid", "2358cf97-b85e-49b2-a10b-a34fdcc15b20"], ["created_at", "2021-02-26 12:12:54.657681"]]
+  [1m[36mTask Update (0.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "scheduled"], ["updated_at", "2021-02-26 12:12:54.655987"], ["id", 4]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ?[0m  [["auditable_id", 4], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Create (1.2ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 4], ["auditable_type", "Task"], ["action", "update"], ["audited_changes", "---\nstatus:\n- scheduled\n- started\n"], ["version", 3], ["request_uuid", "a5f6199f-b11e-4635-856f-0de5dee476d5"], ["created_at", "2021-02-26 12:12:56.397423"]]
+  [1m[36mTask Update (0.7ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "started"], ["updated_at", "2021-02-26 12:12:56.391559"], ["id", 4]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ?[0m  [["auditable_id", 4], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Create (1.0ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 4], ["auditable_type", "Task"], ["action", "update"], ["audited_changes", "---\nstatus:\n- started\n- completed\n"], ["version", 4], ["request_uuid", "a587e9b4-97f3-47de-9e29-a7c64673c3b4"], ["created_at", "2021-02-26 12:13:04.576628"]]
+  [1m[36mTask Update (0.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "completed"], ["updated_at", "2021-02-26 12:13:04.571194"], ["id", 4]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ?[0m  [["auditable_id", 2], ["auditable_type", "Task"]]
+  [1m[36mAudited::Audit Create (0.4ms)[0m  [1m[32mINSERT INTO "audits" ("auditable_id", "auditable_type", "action", "audited_changes", "version", "request_uuid", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["auditable_id", 2], ["auditable_type", "Task"], ["action", "update"], ["audited_changes", "---\nstatus:\n- draft\n- scheduled\n"], ["version", 2], ["request_uuid", "356549e0-5945-4f78-82fc-075af1e6776d"], ["created_at", "2021-02-26 12:13:35.572048"]]
+  [1m[36mTask Update (0.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "scheduled"], ["updated_at", "2021-02-26 12:13:35.564977"], ["id", 2]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mAudited::Audit Load (0.8ms)[0m  [1m[34mSELECT "audits".* FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ? /* loading for inspect */ ORDER BY "audits"."version" ASC LIMIT ?[0m  [["auditable_id", 1], ["auditable_type", "Task"], ["LIMIT", 11]]
+  [1m[36mAudited::Audit Load (0.8ms)[0m  [1m[34mSELECT "audits".* FROM "audits" WHERE "audits"."auditable_id" = ? AND "audits"."auditable_type" = ? ORDER BY "audits"."version" DESC LIMIT ?[0m  [["auditable_id", 1], ["auditable_type", "Task"], ["LIMIT", 1]]
